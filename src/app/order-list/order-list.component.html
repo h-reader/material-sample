@@ -1,0 +1,40 @@
+<mat-table #table [dataSource]="dataSource">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Base curry Column -->
+  <ng-container matColumnDef="curry">
+    <mat-header-cell *matHeaderCellDef> ベースカレー </mat-header-cell>
+    <mat-cell *matCellDef="let order"> {{order.curry}} </mat-cell>
+  </ng-container>
+
+  <!-- Soup Column -->
+  <ng-container matColumnDef="soup">
+    <mat-header-cell *matHeaderCellDef> スープ </mat-header-cell>
+    <mat-cell *matCellDef="let order"> {{order.soup}} </mat-cell>
+  </ng-container>
+
+  <!-- spicy Column -->
+  <ng-container matColumnDef="spicy">
+    <mat-header-cell *matHeaderCellDef> 辛さ </mat-header-cell>
+    <mat-cell *matCellDef="let order"> {{order.spicy}} </mat-cell>
+  </ng-container>
+
+  <!-- topping Column -->
+  <ng-container matColumnDef="topping">
+    <mat-header-cell *matHeaderCellDef> トッピング </mat-header-cell>
+    <mat-cell *matCellDef="let order"> {{order.topping}} </mat-cell>
+  </ng-container>
+
+  <!-- rice Column -->
+  <ng-container matColumnDef="rice">
+    <mat-header-cell *matHeaderCellDef> ご飯の量 </mat-header-cell>
+    <mat-cell *matCellDef="let order"> {{order.rice}} </mat-cell>
+  </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+<button mat-button color="primary" (click)="back()" >戻る</button>

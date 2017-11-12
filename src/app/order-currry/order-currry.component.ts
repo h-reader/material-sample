@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order-currry',
@@ -9,13 +9,13 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class OrderCurrryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   order() {
-
+    this.router.navigate(['/list']);
   }
 
 }
