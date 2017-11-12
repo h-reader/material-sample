@@ -1,0 +1,68 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Order Curry</mat-card-title>
+    <mat-card-subtitle>Everyting Delicious!</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+
+    <div></div>
+
+    <p>カレーを選ぶ</p>
+
+    <!-- select -->
+    <mat-form-field>
+      <mat-select placeholder="ベースのカレー">
+        <mat-option value="1">チキンと1日分の野菜</mat-option>
+        <mat-option value="2">豚角煮と野菜</mat-option>
+        <mat-option value="3">ひき肉納豆と野菜</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- radio -->
+    <p>スープの種類</p>
+    <mat-radio-group>
+      <mat-radio-button value="a">レギュラー</mat-radio-button>
+      <mat-radio-button value="a">マイルド</mat-radio-button>
+      <mat-radio-button value="a">ココナッツ</mat-radio-button>
+    </mat-radio-group>
+
+    <!-- slider -->
+    <p>辛さ</p>
+    <mat-slider [min]="0" [max]="10" thumb-label="true"></mat-slider>
+
+    <!-- checkbox -->
+    <p>トッピング</p>
+    <mat-checkbox>チキン</mat-checkbox>
+    <mat-checkbox>ナス</mat-checkbox>
+    <mat-checkbox>パプリカ</mat-checkbox>
+
+    <!-- chip-list -->
+    <p>ご飯の量</p>
+    <mat-chip-list>
+      <mat-chip>S</mat-chip>
+      <mat-chip color="primary" selected="true">M</mat-chip>
+      <mat-chip color="accent" selected="true">L</mat-chip>
+    </mat-chip-list>
+
+    <br>
+    <p>配送先</p>
+
+    <!-- input -->
+    <mat-form-field>
+      <input matInput placeholder="住所">
+    </mat-form-field>
+
+    <br>
+    <!-- datepicker -->
+    <mat-form-field>
+      <input matInput [matDatepicker]="myDatepicker" placeholder="お届け配達日">
+      <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+      <mat-datepicker #myDatepicker></mat-datepicker>
+    </mat-form-field>
+
+    <br>
+    <!-- butoon -->
+    <button mat-raised-button color="primary" (click)="order()" >注文</button>
+
+  </mat-card-content>
+</mat-card>
